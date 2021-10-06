@@ -1,0 +1,8 @@
+README.md
+setup.cfg
+setup.py
+rasa_demo.egg-info/PKG-INFO
+rasa_demo.egg-info/SOURCES.txt
+rasa_demo.egg-info/dependency_links.txt
+rasa_demo.egg-info/requires.txt
+rasa_demo.egg-info/top_level.txt
