@@ -1,0 +1,374 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- objeto3:
+    use_entities: true
+- provide_name:
+    use_entities: true
+- dudas:
+    use_entities: true
+- objeto1:
+    use_entities: true
+- deny:
+    use_entities: true
+- objeto4:
+    use_entities: true
+- propios3:
+    use_entities: true
+- propios4:
+    use_entities: true
+- greet:
+    use_entities: true
+- propios1:
+    use_entities: true
+- recibir_lista_inmediata:
+    use_entities: true
+- objeto5:
+    use_entities: true
+- definiciones2:
+    use_entities: true
+- nlu_fallback:
+    use_entities: true
+- definiciones5:
+    use_entities: true
+- definiciones1:
+    use_entities: true
+- provide_age:
+    use_entities: true
+- chatbot_mal:
+    use_entities: true
+- definiciones3:
+    use_entities: true
+- affirm:
+    use_entities: true
+- preg_propios:
+    use_entities: true
+- propios2:
+    use_entities: true
+- preg_defs:
+    use_entities: true
+- antecedentes_si:
+    use_entities: true
+- hacer_preg2:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- check_data:
+    use_entities: true
+- check_prob_inicial:
+    use_entities: true
+- check_preg_defs:
+    use_entities: true
+- definiciones4:
+    use_entities: true
+- lista_frutas:
+    use_entities: true
+- propios5:
+    use_entities: true
+- lista_inmediata:
+    use_entities: true
+- objeto2:
+    use_entities: true
+- chatbot_bien:
+    use_entities: true
+- lista_despues:
+    use_entities: true
+- quien_soy:
+    use_entities: true
+- recibir_lista_despues:
+    use_entities: true
+- pregunta_objetos:
+    use_entities: true
+- obtener_resultados:
+    use_entities: true
+entities:
+- age
+- antecedentes
+- familiar
+- lista_compra
+- name
+- res_final
+- resultado_final
+slots:
+  name:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  age:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+    max_value: 1.0
+    min_value: 0.0
+  antecedentes:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  prob:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: 1
+    auto_fill: true
+    influence_conversation: true
+    max_value: 1.0
+    min_value: 0.0
+  res_def:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: 0
+    auto_fill: true
+    influence_conversation: true
+    max_value: 1.0
+    min_value: 0.0
+  res_propios:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: 0
+    auto_fill: true
+    influence_conversation: true
+    max_value: 1.0
+    min_value: 0.0
+  preg_def:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  lista_compra:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  res_lista_inmediata:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: 0
+    auto_fill: true
+    influence_conversation: true
+    max_value: 1.0
+    min_value: 0.0
+  res_lista_despues:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: 0
+    auto_fill: true
+    influence_conversation: true
+    max_value: 1.0
+    min_value: 0.0
+  res_objetos:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: 0
+    auto_fill: true
+    influence_conversation: true
+    max_value: 1.0
+    min_value: 0.0
+  res_chatbot:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: 0
+    auto_fill: true
+    influence_conversation: true
+    max_value: 1.0
+    min_value: 0.0
+  res_final:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: 0
+    auto_fill: true
+    influence_conversation: true
+    max_value: 1.0
+    min_value: 0.0
+  resultado_final:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  json:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+responses:
+  utter_greet:
+  - text: ¡Hola! Soy un asistente virtual y mi trabajo es intentar prevenir enfermedades cognitivas, identificándolas a tiempo. Si está preparado, podemos comenzar a hacer un test mini-mental. Consiste en 6 preguntas que evalúan diferentes aspectos cognitivos. Antes de empezar, me gustaría preguntarle algunos datos personales.
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: ¡Genial!
+  utter_goodbye:
+  - text: Adiós
+  - text: Hasta pronto!
+  - text: Ha sido un verdadero placer hacer el test contigo, gracias por tu atención.
+  - text: Que pases un buen día!
+  - text: Te deseo lo mejor!
+  utter_iamabot:
+  - text: Soy un bot, diseñado por Rasa
+  utter_ask_name:
+  - text: Antes de empezar me gustaría preguntarle su nombre
+  - text: ¿Podría decirme su nombre?
+  utter_gracias:
+  - text: Muchas gracias {name}
+  utter_ask_age:
+  - text: ¿Podría decirme su edad?
+  utter_ask_antecedentes:
+  - text: ¿Ha habido casos de Alzheimer en un familiar cercano?
+  - text: Por último, me gustaría saber si ha habido casos de Alzheimer en su familia cercana
+  utter_submit:
+  - text: ¡Todo bien!
+  - text: Perfecto, ¡muchas gracias!
+  utter_slots_values:
+  - text: |-
+      por favor, confirma que los datos son correctos: 
+       - name: {name}
+       - age: {age}
+       - antecedentes: {antecedentes}
+  utter_preg_defs:
+  - text: |-
+      Resultado de preg defs
+       - res_def: {res_def}
+  utter_bienvenida:
+  - text: ¡Hola! Soy un asistente virtual y mi trabajo es intentar prevenir enfermedades cognitivas, identificándolas a tiempo. Si está preparado, podemos comenzar a hacer un test mini-mental. Consiste en 5 preguntas que evalúan diferentes aspectos cognitivos. Antes de empezar, me gustaría preguntarle algunos datos personales.
+  utter_definiciones1:
+  - text: ¿Dónde se mira uno si quiere verse a si mismo?
+  utter_definiciones2:
+  - text: ¿Dónde se apoya la cabeza en la cama?
+  utter_definiciones3:
+  - text: ¿Dónde se compran los medicamentos?
+  utter_definiciones4:
+  - text: ¿Qué alimento producen las abejas?
+  utter_definiciones5:
+  - text: ¿Dónde se conservan fríos los alimentos?
+  utter_preg2:
+  - text: Debe listar el mayor número de frutas que pueda en 30 segundos. Le avisaremos cuando acabe el tiempo.
+  utter_propios1:
+  - text: ¿Cómo se llama el actual presidente del gobierno de España?
+  utter_propios2:
+  - text: ¿Quién es el rey de España actual?
+  utter_propios3:
+  - text: ¿Cómo se llama el Papa actual?
+  utter_propios4:
+  - text: ¿Quién es el presidente del Real Madrid?
+  utter_propios5:
+  - text: ¿Cómo se llama la Reina de Inglaterra?
+  utter_enunciado_test:
+  - text: ¡Perfecto! Ya tengo todos los datos necesarios. A continuación, vamos a realizar un test mini-mental. Deberá contestar a las preguntas propuestas. Si no conoce las respuestas puede decir "no lo se" o "siguiente" para pasar a la siguiente pregunta.
+  utter_enunciado_definiciones:
+  - text: Esta pregunta consiste en identificar palabras a través de sus definiciones. Yo le proporcionaré la definición y tendrá que decir a qué objeto se refiere. ¡Comencemos!
+  utter_enunciado_propios:
+  - text: Esta pregunta consiste en identificar nombres propios de personas célebres. Se proporcionará una descripción, y se espera el nombre de la persona correspondiente. Vamos a empezar
+  utter_fin_pregunta:
+  - text: ¡Perfecto! Hemos finalizado esta pregunta. Procedemos con la siguiente.
+  utter_pregunta_lista:
+  - text: A continuación, le voy a proporcionar una lista de 10 objetos, y tendrá que memorizar el máximo número posible. La lista es la siguiente \n Café, Tomate, Arroz, Queso, Sal, Agua, Pan, Champú, Atún, Pasta
+  utter_ask_lista:
+  - text: ¿Cuántos  de los objetos puede repetir?
+  utter_enunciado_objetos:
+  - text: La siguiente pregunta consiste en denominar objetos. Para ello, le voy a enseñar una serie de imágenes y debe responder a qué objeto correspode.
+  utter_objeto1:
+  - image: https://d25rq8gxcq0p71.cloudfront.net/dictionary-images/324/button.jpg
+    text: Objeto 1
+  utter_objeto2:
+  - image: https://gestion.pe/resizer/zi_x07ZWzqyJPWcpiLohIE7KK6w=/1200x800/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/OEGKPKCE3RCRXMFJDPL5LK7OJE.jpg
+    text: Objeto 2
+  utter_objeto3:
+  - image: https://st.depositphotos.com/1741875/1378/i/600/depositphotos_13784614-stock-photo-pencil-isolated-on-pure-white.jpg
+    text: Objeto 3
+  utter_objeto4:
+  - image: https://www.consumoteca.com/wp-content/uploads/Reloj-de-pulsera-Amazon.jpg
+    text: objeto 4
+  utter_objeto5:
+  - image: http://www.conservatoriotriana.com/departamentos/guitarra/historiaguitarra/guitarra.jpg
+    text: Objeto 5
+  utter_pregunta_chatbot:
+  - text: Por último, podría decirme quién soy yo, ¿un assistente virtual o una persona real?
+  utter_pregunta_lista_despues:
+  - text: Ahora, deberá decirme los objetos de la lista anterior de los que se acuerda
+  utter_fin_test:
+  - text: ¡Enhorabuena! Ya ha acabado el test mini-mental. En unos segundos le daré el resultado.
+  utter_res0:
+  - text: Los resultados del test son satisfactorios. No muestran ningún síntoma de algún trastorno cognitivo.
+  utter_res1:
+  - text: Los resultados del test no son tan altos como lo esperado. Esto podría llegar a indicar los primeros síntomas de un trastorno cognitivo como el Deterioro Cognitivo leve. Los resultados de este test no son definitivos pero le recomiendo que consulte con personal sanitario cualificado.
+  utter_res2:
+  - text: Los resultados del test son más bajos de lo esperado. Esto podría llegar a indicar los primeros síntomas de un trastorno cognitivo como la enfermedad del Alzheimer. Los resultados de este test no son definitivos pero le recomiendo que consulte con personal sanitario cualificado.
+  utter_resultado_final:
+  - text: |-
+      El resultado obtenido por el test es el siguiente
+         {resultado_final}
+  utter_resultado_final_pro:
+  - text: |-
+      El resultado es
+        resultado: {res_final}
+        texto: {resultado_final}
+actions:
+- action_react_to_reminder
+- action_set_reminder
+- probabilidad_inicial
+- set_antecedentes_no
+- set_antecedentes_si
+- set_chatbot_bien
+- set_chatbot_mal
+- set_resultado_defs
+- set_resultado_lista
+- set_resultado_obj
+- set_resultado_propios
+- utter_ask_age
+- utter_ask_antecedentes
+- utter_ask_lista
+- utter_ask_name
+- utter_bienvenida
+- utter_cheer_up
+- utter_definiciones1
+- utter_definiciones2
+- utter_definiciones3
+- utter_definiciones4
+- utter_definiciones5
+- utter_did_that_help
+- utter_enunciado_definiciones
+- utter_enunciado_objetos
+- utter_enunciado_propios
+- utter_enunciado_test
+- utter_fin_pregunta
+- utter_goodbye
+- utter_gracias
+- utter_greet
+- utter_happy
+- utter_iamabot
+- utter_objeto1
+- utter_objeto2
+- utter_objeto3
+- utter_objeto4
+- utter_objeto5
+- utter_preg2
+- utter_preg_defs
+- utter_pregunta_lista
+- utter_propios1
+- utter_propios2
+- utter_propios3
+- utter_propios4
+- utter_propios5
+- validate_age
+- validate_antecedentes
+- validate_name
+- validate_personal_form
+- utter_pregunta_chatbot
+- set_resultado_lista_despues
+- set_resultado_lista_inmediata
+- utter_pregunta_lista_despues
+- utter_fin_test
+- action_set_final_result
+- utter_res0
+- utter_res1
+- utter_res2
+- utter_resultado_final
+- utter_resultado_final_pro
+forms: {}
+e2e_actions: []

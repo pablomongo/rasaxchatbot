@@ -1,0 +1,47 @@
+# rasax specific settings
+rasax:
+    # initialUser is the user which is created upon the initial start of Rasa X
+    initialUser:
+        # password for the Rasa X user
+        password: "5554"
+    # passwordSalt Rasa X uses to salt the user passwords
+    passwordSalt: "E1F53135E559C253"
+    # token Rasa X accepts as authentication token from other Rasa services
+    token: "yOqAxZhZ8l"
+    # jwtSecret which is used to sign the jwtTokens of the users
+    jwtSecret: "YWaZ2Votxe"
+    tag: "0.40.1"
+# rasa: Settings common for all Rasa containers
+rasa:
+    # token Rasa accepts as authentication token from other Rasa services
+    token: "F7JPTMAXKa"
+    tag: "2.6.2-full"
+# RabbitMQ specific settings
+rabbitmq:
+    # rabbitmq settings of the subchart
+    rabbitmq:
+        # password which is used for the authentication
+        password: "P0JuJdqhXzg9RIY3YF3V"
+
+# global settings of the used subcharts
+global:
+    # postgresql: global settings of the postgresql subchart
+    postgresql:
+        # postgresqlPassword is the password which is used when the postgresqlUsername equals "postgres"
+        postgresqlPassword: "ZbyNuMH7Am"
+    # redis: global settings of the redis subchart
+    redis:
+        # password to use in case there no external secret was provided
+        password: "jTlxEyB3ns4Nhn8KMfhB"
+ingress:
+  annotations:
+    ingress.annotations.certmanager.k8s.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/ingress.class: traefik
+  hosts:
+    - host: http://192.168.1.52
+      paths:
+      - /
+  tls:
+   - secretName: rasa-x-tsl
+     hosts:
+       - http://192.168.1.52

@@ -1,0 +1,8 @@
+Rasa X url with localhost:
+http://localhost:5002/login?username=me&password=up9C77eHkGSL
+
+Ngrok url:
+https://378b-88-20-40-82.ngrok.io
+
+Share your bot with real testers link:
+http://378b-88-20-40-82.ngrok.io/login?username=me&password=up9C77eHkGSL
