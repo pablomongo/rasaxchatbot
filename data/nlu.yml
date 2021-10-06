@@ -1,0 +1,437 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - hola
+    - buenos días
+    - buenos dias
+    - buenas
+    - Hola
+    - buenas tardes
+    - buenas noches
+    - good afternoon
+    - Buenas tardes
+    - Buenas
+    - Hola
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - good bye
+    - see you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - adiós
+    - hasta luego
+    - nos vemos pronto
+    - te deseo un buen día
+    - nos vemos 
+    - chao
+    - ciao
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - sí
+    - claro
+    - Sí
+    - si
+    - por supuesto
+    - exacto
+    - claramente
+    - suena bien
+    - eso es
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - no creo
+    - creo que no
+    - Creo que no
+    - No
+    - Nunca
+    - nunca
+    - jamás
+    - Jamás
+    - de ninguna manera
+    - De ninguna manera
+    - no tiene sentido
+    - No tiene sentido
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - me siento bien
+    - bien
+    - Bien!
+    - genial
+    - Genial
+    - perfecto
+    - estoy a tope
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so sad
+    - estoy triste
+    - triste
+    - muy triste
+    - podría estar mejor
+    - he tenido un mal día
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - ¿Quien eres?
+    - ¿Quién eres?
+    - eres un bot?
+    - Eres un asistente virtual?
+    - eres humano?
+    - eres un robot?
+- intent: provide_name
+  examples: |
+    - Me llamo [Pablo Mongo](name)
+    - [Pablo Mongo] (name)
+    - Mi nombre es [Pablo Mongo](name)
+    - Soy [Pablo Mongo](name)
+    - [Pablo Mongo](name)
+    - Pablo
+    - Me llamo [Asio](name)
+    - me llamo [Pablo](name)
+    - Me llamo [Pablo](name)
+    - Me llamo [marta](name)
+    - Me llamo [Pablo](name)
+    - me llamo [pablo mongo](name)
+    - [pablo](name)
+    - [Pablo](name)
+    - me llamo [pablo](name)
+
+- intent: provide_age
+  examples: |
+    - Tengo [25](age) años
+    - [25](age)
+    - [25](age) años
+    - Mi edad es [25]
+    - tengo [25](age) años
+    - Tengo [67](age) años
+    - Tengo [25](age) años
+    - [53](age)
+
+- intent: antecedentes_si
+  examples: |
+    - Mi [abuelo](familiar) tuvo
+    - Sí, se que mi [abuelo](familiar) padece de Alzheimer
+    - Puede ser que un [abuelo](familiar) mío lo tuviese
+    - Si
+    - Sí, mi [abuelo](familiar) tuvo Alzheimer
+    - Sí, sé que mi [tío](familiar) sufrió esta enfermedad
+    - Sí, mi [madre](familiar) tiene Alzheimer
+    - Tengo muchos antecedentes
+- intent: check_data
+  examples: |
+    - Check data
+    - Comprobar los datos
+- intent: check_prob_inicial
+  examples: |
+    - Check prob inicial
+    - Comprobar la probabilidad inicial
+- intent: check_preg_defs
+  examples: |
+    - Check preg defs
+    - Comprobar pref defs
+- intent: dudas
+  examples: |
+    - No lo sé
+    - No se
+    - Y yo que se
+    - A saber
+    - siguiente
+    - no lo se
+    - ?
+    - no sé
+    - Siguiente
+    - Siguiente pregunta
+    - no tengo ni idea
+    - Ojalá saberlo
+    - Tendría que informarme
+- intent: definiciones1
+  examples: |
+    - Un espejo
+    - un espejo
+    - En el espejo
+    - espejo
+    - Espejo
+- intent: definiciones2
+  examples: |
+    - La almohada
+    - Un cojín
+    - Una almohada
+    - una almohada
+    - En la almohada
+    - Almohada
+    - la almohada
+    - almohada
+    - cojín
+    - Cojín
+- intent: definiciones3
+  examples: |
+    - La Farmacia
+    - una farmacia
+    - En la farmacia
+    - la farmacia
+    - Farmacia
+    - farmacia
+    - en una farmacia
+- intent: definiciones4
+  examples: |
+    - La miel
+    - miel
+    - Miel
+- intent: definiciones5
+  examples: |
+    - La nevera
+    - El congelador
+    - una nevera
+    - Una nevera
+    - la nevera
+    - Nevera
+    - En la nevera
+    - Frigorífico
+    - En el frigorífico
+    - frigo
+    - frigorifico
+- intent: preg_defs
+  examples: |
+    - Hacer preg defs
+    - hacer preg defs
+    - hacer pregunta definiciones
+    - pregunta definiciones
+    - definiciones
+
+- intent: preg_propios
+  examples: |
+    - Pregunta nombres propios
+    - hacer preg propios
+    - Pregunta propios
+    - propios
+    - pregunta nombres propios
+- intent: hacer_preg2
+  examples: |
+    - pregunta con timer
+    - EXTERNAL: hacer_preg2
+- intent: nlu_fallback
+  examples: |
+    - un sofa
+    - Isabel segunda
+    - Juan Carlos I
+    - a su mujer
+    - sabana
+    - microondas
+    - Juan Carlos
+    - un supermercado
+    - Isabel II
+    - Isabel
+
+- intent: propios1
+  examples: |
+    - Pedro Sánchez
+    - Pedro Sanchez
+    - Sánchez
+    - Sanchez
+    - pedro sanchez
+    - pedro sánchez
+- intent: propios2
+  examples: |
+    - Felipe Borbón
+    - Felipe sexto
+    - Felipe VI
+    - Felipe Vi
+    - felipe sexto
+    - felipe vi
+- intent: propios3
+  examples: |
+    - Francisco primero
+    - Francisco
+    - Francisco I
+    - fran
+    - francisco
+- intent: propios4
+  examples: |
+    - Florentino Pérez
+    - Florentino
+    - Florentino Perez
+    - florentino
+    - florentino pérez
+- intent: propios5
+  examples: |
+    - Isabel segunda
+    - Isabel
+    - Elizabeth
+    - Elizabeth the second
+    - Isabel II
+    - isabel ii
+- intent: recibir_lista_inmediata
+  examples: |
+    - [Café, Tomate, Arroz, Queso, Sal, Agua, Pan, Champú, Atún, Pasta](lista_compra)
+    - [Arroz, pan, agua, cafe](lista_compra)
+    - [Arroz, pan, cafe](lista_compra)
+    - [cafe, tomate, pasta, pan](lista_compra)
+    - [arroz, pan, agua](lista_compra)
+- intent: recibir_lista_despues
+  examples: |
+    - [Café, Tomate, Arroz, Queso, Sal, Agua, Pan, Champú, Atún, Pasta](lista_compra)
+    - [cafe, tomate, pasta, pan](lista_compra)
+    - [arroz, pan, agua](lista_compra)
+    - [champu, pasta](lista_compra)
+    - [pan](lista_compra), [agua](lista_compra), [arroz](lista_compra), [queso](lista_compra),
+    - [pan](lista_compra), [agua](lista_compra), [queso](lista_compra), [pasta](lista_compra)
+    - [agua](lista_compra), [pan](lista_compra), [arroz](lista_compra), [pasta](lista_compra)
+    - [agua](lista_compra), [pan](lista_compra), [pasta](lista_compra), [arroz](lista_compra)
+
+- intent: lista_inmediata
+  examples: |
+    - Lista inmediata
+    - lista inmediata
+    - Hacer pregunta lista inmediata
+    - Lista Inmediata
+- intent: chatbot_bien
+  examples: |
+    - Un asistente virtual
+    - un chatbot
+    - Un robot
+    - Un chatbot
+    - un robot
+    - chatbot
+    - asistente virtual
+    - asistente
+    - virtual
+- intent: chatbot_mal
+  examples: |
+    - Una persona real
+    - persona
+    - una persona
+    - un humano
+- intent: objeto1
+  examples: |
+    - Un botón
+    - un boton
+    - botón
+    - boton
+    - un botón
+
+- intent: objeto2
+  examples: |
+    - Un zapato
+    - zapato
+    - un zapato
+    - Zapato
+
+- intent: objeto3
+  examples: |
+    - Un lápiz
+    - lapiz
+    - lápiz
+    - un lapiz
+    - Lápiz
+    - Lapiz
+
+- intent: objeto4
+  examples: |
+    - un reloj
+    - un reloj de pulsera
+    - Un reloj
+    - Reloj
+    - reloj
+
+- intent: objeto5
+  examples: |
+    - Una guitarra
+    - un instrumento
+    - una guitarra
+    - guitarra
+    - Guitarra
+    - guitarra española
+
+- intent: lista_despues
+  examples: |
+    - lista despues
+    - hacer pregunta lista despues
+    - Lista demorada
+    - lista demorada
+    - Lista Demorada
+    - hacer pregunta lista demorada
+- intent: quien_soy
+  examples: |
+    - pregunta chatbot
+    - Pregunta quien soy
+    - Pregunta quién soy
+    - pregunta quién soy
+    - pregunta quien soy
+    - identificación identidad
+    - identificacion identidad
+    - Identificación identidad
+    - Identificacion identidad
+    - identidad
+- intent: pregunta_objetos
+  examples: |
+    - Pregunta objetos
+    - pregunta objetos
+    - Pregunta Objetos
+    - hacer objetos
+    - hacer pregunta objetos
+
+- intent: obtener_resultados
+  examples: |
+    - Obtener resultados
+    - resultados
+    - obtener resultados
+    - resultado
+    - resultado final

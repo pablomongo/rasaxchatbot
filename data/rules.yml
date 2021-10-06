@@ -1,0 +1,66 @@
+version: "2.0"
+
+rules:
+- rule: checck data
+  steps:
+    - intent: check_data
+    - action: utter_slots_values
+
+- rule: check prob inicial
+  steps:
+    - intent: check_prob_inicial
+    - action: probabilidad_inicial
+
+- rule: check preg defs
+  steps:
+    - intent: check_preg_defs
+    - action: utter_preg_defs
+
+- rule: hacer preg definiciones
+  steps:
+    - intent: preg_defs
+    - action: utter_enunciado_definiciones
+    - action: utter_definiciones1
+
+- rule: hacer preg propios
+  steps:
+    - intent: preg_propios
+    - action: utter_enunciado_propios
+    - action: utter_propios1
+
+- rule: hacer lista inmediata
+  steps:
+    - intent: lista_inmediata
+    - action: utter_pregunta_lista
+    - action: utter_ask_lista
+
+- rule: hacer preg objetos
+  steps:
+    - intent: pregunta_objetos
+    - action: utter_enunciado_objetos
+    - action: utter_objeto1
+
+- rule: hacer lista demorada
+  steps:
+    - intent: lista_despues
+    - action: utter_pregunta_lista_despues
+
+- rule: hacer pregunta chatbot
+  steps:
+    - intent: quien_soy
+    - action: utter_pregunta_chatbot
+
+- rule: obtener resultado
+  steps:
+    - intent: obtener_resultados
+    - action: utter_resultado_final_pro
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
